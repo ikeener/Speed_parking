@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Barcode</title>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="jquery-code39.js"></script>
+<script type="text/javascript">
+	function clicked(){
+		document.getElementById("confirm").style.display = "none";
+		var hri = window.name;
+		$("#bcTarget1").code39(hri);
+		document.getElementById("ok").style.display="block";
+	}
+</script>
+<style>
+@import url("S-Core-Dream-light/s-core-dream.css");
+*{font-family: "s-core-dream-regular", sans-serif !important; } 
+input
+{
+	margin-top:5px;
+	border: 1px solid #88B7C9; 
+	background-color: #fff; 
+	color: #233B4D; 
+	padding: 3px;
+	font-family: "s-core-dream-medium", sans-serif !important; 
+	font-size:13px;
+	border-radius:5px;
+	width:50px;
+}
+input:hover
+{ 
+	color:#233B4D; 
+	background-color: #C9DFF0; 
+}
+</style>
+
+</head>
+
+<body>
+<center>
+	<div id="bcTarget1" style="margin-top:50px;"></div>
+	
+	<div id="confirm" style="margin-top:100px;">
+		<h4 style="color:#233B4D">예약 되었습니다.</h4>
+		<input type="button" value="확인" onclick="clicked();"/>
+	</div>
+	
+	<input id="ok" type="button" value="확인" style="margin-top:40px; display:none" onclick="window.close();"/>
+</center>
+</body>
+
+</html>
